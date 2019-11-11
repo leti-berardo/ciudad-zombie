@@ -15,8 +15,8 @@ var Jugador = {
   // y todo lo que haga falta para que cumpla con sus responsabilidades
   
   mover: function(movX, movY){
-    this.x = movX;
-    this.y = movY;
+    this.x += movX;
+    this.y += movY;
   },
 
 };
