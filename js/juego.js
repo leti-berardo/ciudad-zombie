@@ -143,7 +143,6 @@ Juego.capturarMovimiento = function(tecla) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
     this.jugador.mover(movX, movY);
-    this.dibujar();
   }
 };
 

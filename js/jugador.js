@@ -19,4 +19,8 @@ var Jugador = {
     this.y += movY;
   },
 
+  perderVidas: function(cantVidas) {
+    this.vidas -= cantVidas;
+  }
+
 };
