@@ -47,7 +47,7 @@ var Juego = {
 
   ]
 
-}
+};
 
 /* Se cargan los recursos de las imagenes, para tener un facil acceso
 a ellos. No hace falta comprender esta parte. Pero si queres agregar tus propies
@@ -104,7 +104,7 @@ Juego.buclePrincipal = function() {
 Juego.update = function() {
   this.calcularAtaques();
   this.moverEnemigos();
-}
+};
 // Captura las teclas y si coincide con alguna de las flechas tiene que
 // hacer que el jugador principal se mueva
 Juego.capturarMovimiento = function(tecla) {
@@ -130,8 +130,7 @@ Juego.capturarMovimiento = function(tecla) {
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
-
-    /* COMPLETAR */
+    this.jugador.mover(movX, movY);
   }
 };
 
@@ -161,7 +160,7 @@ Juego.dibujar = function() {
   var tamanio = this.anchoCanvas / this.vidasInicial;
   Dibujante.dibujarRectangulo('white', 0, 0, this.anchoCanvas, 8);
   for (var i = 0; i < this.jugador.vidas; i++) {
-    var x = tamanio * i
+    var x = tamanio * i;
     Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
   }
 };
@@ -196,32 +195,32 @@ Juego.calcularAtaques = function() {
 /* Aca se chequea si el jugador se peude mover a la posicion destino.
  Es decir, que no haya obstaculos que se interpongan. De ser asi, no podra moverse */
 Juego.chequearColisiones = function(x, y) {
-  var puedeMoverse = true
+  var puedeMoverse = true;
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
       /*COMPLETAR, obstaculo debe chocar al jugador*/
 
-      puedeMoverse = false
+      puedeMoverse = false;
     }
-  }, this)
-  return puedeMoverse
+  }, this);
+  return puedeMoverse;
 };
 
 /* Este metodo chequea si los elementos 1 y 2 si cruzan en x e y
  x e y representan la coordenada a la cual se quiere mover el elemento2*/
 Juego.intersecan = function(elemento1, elemento2, x, y) {
-  var izquierda1 = elemento1.x
-  var derecha1 = izquierda1 + elemento1.ancho
-  var techo1 = elemento1.y
-  var piso1 = techo1 + elemento1.alto
-  var izquierda2 = x
-  var derecha2 = izquierda2 + elemento2.ancho
-  var techo2 = y
-  var piso2 = y + elemento2.alto
+  var izquierda1 = elemento1.x;
+  var derecha1 = izquierda1 + elemento1.ancho;
+  var techo1 = elemento1.y;
+  var piso1 = techo1 + elemento1.alto;
+  var izquierda2 = x;
+  var derecha2 = izquierda2 + elemento2.ancho;
+  var techo2 = y;
+  var piso2 = y + elemento2.alto;
 
   return ((piso1 >= techo2) && (techo1 <= piso2) &&
-    (derecha1 >= izquierda2) && (izquierda1 <= derecha2))
+    (derecha1 >= izquierda2) && (izquierda1 <= derecha2));
 };
 
 Juego.dibujarFondo = function() {
