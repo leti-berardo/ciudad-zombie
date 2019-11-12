@@ -20,8 +20,26 @@ var Juego = {
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
-    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1)
-
+    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 100, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 130, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 507, 400, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 130, 100, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 160, 100, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 196, 450, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 470, 450, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 470, 480, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 160, 260, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 360, 380, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 360, 80, 30,30, 1),
+    new Obstaculo('imagenes/bache.png', 390, 100, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 800, 400, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 830, 350, 30, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png', 110, 290, 15, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png', 830, 430, 15, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png', 530, 210, 15, 30, 1),
+    new Obstaculo('imagenes/auto_verde_derecha.png',560, 100, 30, 15, 1),
+    new Obstaculo('imagenes/auto_verde_derecha.png',380, 450, 30, 15, 1),
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -212,6 +230,7 @@ Juego.chequearColisiones = function(x, y) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
       /*COMPLETAR, obstaculo debe chocar al jugador*/
+      obstaculo.chocar(this.jugador);
 
       puedeMoverse = false;
     }
