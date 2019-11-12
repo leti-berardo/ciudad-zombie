@@ -31,8 +31,7 @@ var Juego = {
     new Obstaculo('imagenes/valla_vertical.png', 470, 480, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 160, 260, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 360, 380, 30, 30, 1),
-    new Obstaculo('imagenes/bache.png', 360, 80, 30,30, 1),
-    new Obstaculo('imagenes/bache.png', 390, 100, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 360, 80, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 800, 400, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 830, 350, 30, 30, 1),
     new Obstaculo('imagenes/auto_verde_abajo.png', 110, 290, 15, 30, 1),
@@ -193,6 +192,8 @@ Juego.dibujar = function() {
     var x = tamanio * i;
     Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
   }
+
+  Dibujante.dibujarRectangulo('green', 750, 520, 150, 8);
 };
 
 
