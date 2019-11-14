@@ -1,4 +1,6 @@
-/* Un objeto que representa a los obstaculos. Recibe un sprite que tendra la
+tilizan la herencia para objetos que tienen una
+correspondencia semántica entre sí pero un comportamiento
+específico diferente./* Un objeto que representa a los obstaculos. Recibe un sprite que tendra la
 imagen que lo representa y una potencia indicando cuando danio hace al chocar
 al jugador, ademas de los parametros comunes x, y, ancho y alto*/
 var Obstaculo = function (sprite, x, y, ancho, alto, potencia) {
