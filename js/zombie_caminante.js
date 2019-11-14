@@ -45,3 +45,7 @@ del zombie caminante habra que reimplementar este metodo desde el objeto ZombieC
 ZombieConductor.prototype.atacar = function(jugador) {
   ...
 }*/
+
+// ZombieCaminante.prototype.atacar = function(jugador) {
+//   jugador.perderVidas(2);
+// }

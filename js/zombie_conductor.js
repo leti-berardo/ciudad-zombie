@@ -18,13 +18,19 @@ ZombieConductor.prototype.constructor = ZombieConductor;
 
 ZombieConductor.prototype.mover = function() {
   if (this.direccion == "h"){
+    if ((this.x < this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)){
+      this.velocidad *= -1;
+    }
     this.x += this.velocidad;
   }
   else if (this.direccion == "v") {
+    if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)){
+      this.velocidad *= -1;
+    }
     this.y += this.velocidad;
   }
 };
 
 ZombieConductor.prototype.atacar = function (jugador) {
-  jugador.perderVidas(1);
+  jugador.perderVidas(5);
 };
